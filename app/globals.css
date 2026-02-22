@@ -1,0 +1,126 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  @apply font-sans text-[13px] antialiased l:text-[14px] text-primary;
+}
+
+body {
+  @apply overflow-x-hidden;
+}
+
+.main-column {
+  @apply px-s m:px-l l:px-xl;
+}
+
+.row {
+  @apply flex flex-wrap -mx-xs;
+}
+.col {
+  @apply px-xs;
+}
+
+.my-grid {
+  @apply grid grid-cols-1 m:grid-cols-6 l:grid-cols-8 gap-s grid-flow-dense;
+}
+
+:root {
+  --primary: #000000;
+  --back: #ffffff;
+  --gray: 60deg 15% 90%;
+}
+.dark {
+  --primary: #ffffff;
+  --back: #000000;
+  --gray: 60deg 93% 10%;
+}
+
+.link {
+  @apply relative cursor-pointer;
+}
+.link:after {
+  @apply block border-b w-0 absolute bottom-0 left-0 transition-all;
+  content: "";
+}
+.lead .link:after {
+  @apply bottom-[0.1em];
+}
+.link:hover:after,
+.group:hover .link:after {
+  @apply w-full;
+}
+
+.enter {
+  @apply opacity-0 transition duration-500 translate-y-m ease-out;
+}
+.enter.entered {
+  @apply opacity-100 translate-y-0;
+}
+
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 300, "GRAD" 0, "opsz" 24;
+  @apply !w-m !h-m !text-[1.5rem] !inline-block !leading-[1.5rem];
+}
+
+/* Right panel */
+.right-panel {
+  @apply w-[63rem] translate-x-[63.125rem] transition-transform duration-500 -right-s ease-in;
+}
+.right-panel-opened .right-panel {
+  @apply translate-x-0 right-0 ease-out;
+}
+.right-panel-opened {
+  @apply overflow-hidden;
+}
+.open-right-link {
+  @apply transition-transform duration-500 rotate-0;
+}
+.right-panel-opened .open-right-link {
+  @apply rotate-[225deg];
+}
+
+/* Fixed top menu */
+.menu-bar {
+  @apply absolute top-0 left-0 right-0;
+}
+
+.menu-bar.fixed-top {
+  @apply top-[-5rem];
+}
+
+.menu-bar.fixed-menu {
+  @apply fixed transition-[top] ease-in-out;
+}
+
+.menu-bar.fixed-shown {
+  @apply top-0 transition-[top];
+}
+
+.fixed-top-bar {
+  @apply transition-transform -translate-y-[3rem];
+}
+.fixed-top-bar.visible {
+  @apply translate-y-0;
+}
+
+@layer utilities {
+  .h5 {
+    @apply text-1 uppercase font-bold tracking-4 leading-[1rem];
+  }
+  .h4 {
+    @apply text-2 uppercase font-bold;
+  }
+  .h3 {
+    @apply text-3 md:text-4 uppercase font-bold;
+  }
+  .h2 {
+    @apply text-4 md:text-5 uppercase font-bold;
+  }
+  .h1 {
+    @apply text-6 md:text-7 text-8 uppercase font-bold;
+  }
+  .lead {
+    @apply font-serif text-n2 m:text-n3 !leading-[1.2em] !tracking-0;
+  }
+}
