@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 html {
-  @apply font-sans text-[13px] antialiased l:text-[14px] text-primary;
+  @apply font-sans text-[13px] antialiased l:text-[14px] text-primary overflow-x-hidden;
 }
 
 body {
@@ -63,9 +63,9 @@ body {
   @apply !w-m !h-m !text-[1.5rem] !inline-block !leading-[1.5rem];
 }
 
-/* Right panel */
+/* Right panel - full width on mobile, 63rem on desktop */
 .right-panel {
-  @apply w-[63rem] translate-x-[63.125rem] transition-transform duration-500 -right-s ease-in;
+  @apply w-full l:w-[63rem] translate-x-full l:translate-x-[63.125rem] transition-transform duration-500 -right-s ease-in;
 }
 .right-panel-opened .right-panel {
   @apply translate-x-0 right-0 ease-out;
@@ -80,21 +80,26 @@ body {
   @apply rotate-[225deg];
 }
 
-/* Fixed top menu */
-.menu-bar {
-  @apply absolute top-0 left-0 right-0;
+/* Menu background - layer 2, z-10 */
+.menu-bar-bg {
+  @apply bg-[rgba(255,255,255,0.95)] transition-[top] ease-in-out m:fixed;
 }
-
-.menu-bar.fixed-top {
+body.menu-bar-hidden .menu-bar-bg {
   @apply top-[-5rem];
 }
-
-.menu-bar.fixed-menu {
-  @apply fixed transition-[top] ease-in-out;
+body.menu-bar-fixed .menu-bar-bg {
+  @apply fixed top-0;
 }
 
-.menu-bar.fixed-shown {
-  @apply top-0 transition-[top];
+/* Menu content - layer 4, z-30 */
+.menu-bar {
+  @apply absolute top-0 left-0 right-0 m:fixed transition-[top] ease-in-out z-30;
+}
+body.menu-bar-hidden .menu-bar {
+  @apply top-[-5rem];
+}
+body.menu-bar-fixed .menu-bar {
+  @apply fixed top-0;
 }
 
 .fixed-top-bar {

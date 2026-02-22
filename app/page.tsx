@@ -1,6 +1,9 @@
 "use client";
 
+import { useState } from "react";
 import MenuTop from "@/components/MenuTop";
+import MenuBackground from "@/components/MenuBackground";
+import RightPanel from "@/components/RightPanel";
 import Footer from "@/components/Footer";
 import Image from "@/components/Image";
 import ScrollAnimations from "@/components/ScrollAnimations";
@@ -8,16 +11,19 @@ import { useTranslations } from "@/context/LanguageContext";
 
 export default function Home() {
   const t = useTranslations();
+  const [panelOpen, setPanelOpen] = useState(false);
 
   return (
     <>
-      <MenuTop />
+      <MenuTop panelOpen={panelOpen} setPanelOpen={setPanelOpen} />
+      <MenuBackground />
+      <RightPanel panelOpen={panelOpen} />
       <ScrollAnimations>
         <div className="main-column">
           <div className="my-grid pt-xl">
             <div className="m:col-span-5 l:col-span-5">
               <div
-                className="enter text-n6 m:text-n7 l:text-n8 font-serif mb-m l:mb-l uppercase relative l:mt-2xl pt-l"
+                className="enter text-n5 m:text-n7 l:text-n8 font-serif mb-m l:mb-l uppercase relative l:mt-2xl pt-l"
                 style={{ textWrap: "balance", fontFeatureSettings: "'liga' off" }}
               >
                 {t.hero.title}

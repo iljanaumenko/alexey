@@ -1,10 +1,13 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
-import Image from "./Image";
-import { INSTAGRAM_URL } from "@/content/sections";
+import { useEffect, useRef } from "react";
 import { useTranslations } from "@/context/LanguageContext";
 import LanguageSwitcher from "./LanguageSwitcher";
+
+type MenuTopProps = {
+  panelOpen: boolean;
+  setPanelOpen: (open: boolean) => void;
+};
 
 function useBodyClass(className: string, active: boolean) {
   useEffect(() => {
@@ -30,6 +33,8 @@ function useMenuBarScroll() {
       (navigator.maxTouchPoints ?? 0) > 0;
     if (supportsTouch) return;
 
+    const body = document.body;
+
     const handleScroll = () => {
       const scrollTop = window.scrollY;
       const direction = scrollTop > lastScroll.current ? "FORWARD" : "REVERSE";
@@ -37,27 +42,29 @@ function useMenuBarScroll() {
       const menuHeight = menuBar.offsetHeight;
 
       if (direction === "REVERSE" && scrollTop >= menuHeight && i1.current === 0) {
-        menuBar.classList.remove("fixed-top");
-        menuBar.classList.add("fixed-menu");
-        setTimeout(() => menuBar.classList.add("fixed-shown"), 10);
+        body.classList.remove("menu-bar-hidden");
+        body.classList.add("menu-bar-fixed");
         i1.current = 1;
         i2.current = 0;
       }
       if (direction === "REVERSE" && scrollTop === 0 && i1.current > 0) {
-        menuBar.classList.remove("fixed-shown", "fixed-menu");
+        body.classList.remove("menu-bar-fixed");
         i1.current = 0;
         i2.current = 0;
       }
       if (direction === "FORWARD" && scrollTop > menuHeight && i2.current === 0) {
-        menuBar.classList.add("fixed-top");
-        menuBar.classList.remove("fixed-shown");
+        body.classList.add("menu-bar-hidden");
+        body.classList.remove("menu-bar-fixed");
         i1.current = 0;
         i2.current = 1;
       }
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      body.classList.remove("menu-bar-hidden", "menu-bar-fixed");
+    };
   }, []);
 
   return menuBarRef;
@@ -80,17 +87,15 @@ const Logo = () => (
   </svg>
 );
 
-export default function MenuTop() {
+export default function MenuTop({ panelOpen, setPanelOpen }: MenuTopProps) {
   const t = useTranslations();
-  const [panelOpen, setPanelOpen] = useState(false);
   const openedLabel = t.menu.close;
   const closedLabel = t.menu.info;
   const menuBarRef = useMenuBarScroll();
   useBodyClass("right-panel-opened", panelOpen);
 
   return (
-    <div ref={menuBarRef} className="menu-bar main-column py-m z-10">
-      <div className="bg-[rgba(255,255,255,0.95)] absolute top-0 right-0 w-full h-full z-10"></div>
+    <div ref={menuBarRef} className="menu-bar main-column py-m">
       <div className="flex items-end m:items-center relative z-50">
         <div className="w-1/2 m:w-1/3  ml-xs m:ml-0 flex items-center gap-xs relative">
           <div className="h-[2rem] m:hidden">
@@ -133,68 +138,6 @@ export default function MenuTop() {
             </div>
           </button>
         </div>
-      </div>
-
-      <div className="right-panel absolute top-0 right-0 h-[100vh] z-20 l:shadow-[0_0_0.125rem_0.125rem_rgba(0,0,0,0.1)]">
-          <div className="bg-grey/95 absolute top-0 right-0 w-full h-[5rem] z-30"></div>
-        <div className="overflow-auto overflow-x-hidden absolute bg-grey h-full main-column z-20">
-          <div className="grid gap-s grid-cols-6 l:grid-cols-8 pt-2xl m:pt-3xl grayscale mix-blend-multiply">
-              <div className="col-span-3 mt-xl m:mt-0 row-start-2 m:col-span-2 m:col-start-1 m:row-start-1">
-                <Image src="/img/alexey-2.jpg" caption="" noEnter />
-              </div>
-
-              <div className="col-span-6 row-start-1 l:col-span-4 l:col-start-6 m:col-start-4 m:col-span-3 m:row-start-1 flex flex-col">
-                <div className="uppercase font-semibold tracking-2 border-t pt-2xs">
-                  {t.menu.contact}
-                </div>
-                <br />
-                <div className="pb-s">
-                  <div className=" row">
-                    <div className="col w-1/4">{t.menu.email}</div>
-                    <div className="col w-3/4">
-                      <a className="link" href="mailto:aliaksejnavumenka@gmail.com">
-                        aliaksejnavumenka@gmail.com
-                      </a>
-                    </div>
-                    <div className="col w-1/4">{t.menu.phone}</div>
-                    <div className="col w-3/4">+(48) 574 358 053</div>
-                  </div>
-                  <br />
-                  {t.menu.address} <br /> {t.menu.city}
-                </div>
-
-                <a
-                  href={INSTAGRAM_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex gap-xs items-center group mt-auto"
-                >
-                  <div className="w-m h-m rounded-full">
-                    <span className="material-symbols-outlined">
-                      center_focus_strong
-                    </span>
-                  </div>
-                  <div className="uppercase tracking-2 font-semibold">
-                    <span className="link">{t.menu.followInstagram}</span>
-                  </div>
-                </a>
-              </div>
-
-              <div className="pt-m m:pt-xl pb-3xl -mt-s col-span-6 m:col-span-6 l:col-start-3 lead !leading-[1.2em]">
-                {t.bio.map((paragraph, i) => (
-                  <span key={i}>
-                    {paragraph}
-                    {i < t.bio.length - 1 ? (
-                      <>
-                        <br />
-                        <br />
-                      </>
-                    ) : null}
-                  </span>
-                ))}
-              </div>
-            </div>
-          </div>
       </div>
     </div>
   );

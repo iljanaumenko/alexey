@@ -24,7 +24,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pl">
+    <html lang="pl" className="overflow-x-hidden">
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
@@ -43,7 +43,7 @@ export default function RootLayout({
       </head>
       <body className="">
         <LanguageProvider>
-          <div className="text-primary bg-back">{children}</div>
+          <div className="text-primary bg-back overflow-x-hidden min-w-0">{children}</div>
         </LanguageProvider>
       </body>
     </html>
