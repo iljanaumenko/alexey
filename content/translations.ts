@@ -8,26 +8,24 @@ export type Locale = "pl" | "en";
 export const translations = {
   pl: {
     hero: {
-      title: "Wzbogacanie przestrzeni przez sztukę",
-      titleQ: "",
-      titleEnd: "",
+      title: "Sztuka wzbogacania przestrzeni",
       lead:
-        "Alexey Naumenko jest artystą realizującym projekty w tradycyjnych technikach artystycznych.",
+        "Alexey Naumenko realizuje witraże, malowidła ścienne i detal architektoniczny we współpracy z biurami projektowymi i inwestorami prywatnymi.",
     },
     section: {
       stainedGlass: "Witraże",
       stainedGlassText:
-        "Witraż to główna dziedzina artystyczna Alexeya, z dziesiątkami zrealizowanych projektów — od szklanych kopuł i witraży kościelnych po rezydencje prywatne. W każdym projekcie z pasją przekształca przestrzenie w wizualnie urzekające miejsca, pozostawiając ślad doskonałości i zamieniając zwykłe wnętrza w niezwykłe widowisko światła i koloru.",
+        "Witraż to główna specjalizacja Alexeya — od szklanych kopuł i paneli świetlnych po okna klatek schodowych i witraże sakralne. Każdy projekt powstaje w ścisłej współpracy z architektem: od koncepcji kolorystycznej i doboru szkła, przez projekt techniczny, po realizację i montaż. W portfolio kilkadziesiąt ukończonych realizacji w Polsce i za granicą.",
       fresco: "Fresk",
       frescoText:
-        "Malarstwo freskowe to kolejna technika bliska sercu Alexeya, widoczna w licznych realizacjach — od rozległych murali publicznych po kameralne wnętrza prywatne. Jego podejście do fresku wykracza poza dekorację; to opowieść rozgrywająca się na ścianach, wypełniająca przestrzeń historiami i emocjami, które nadają jej nowy wymiar. Dzięki drobiazgowym detalom i żywym kompozycjom pozostawia trwały ślad kunsztu, przekształcając zwykłe powierzchnie w fascynujące, ponadczasowe narracje.",
+        "Malowidła ścienne w technikach freskowych, secco i sgraffito — od wielkoformatowych kompozycji w przestrzeniach instytucjonalnych po kameralne realizacje w rezydencjach prywatnych. Alexey dobiera technikę do charakteru wnętrza i wymagań projektu, zapewniając trwałość i spójność z koncepcją architektoniczną. Doświadczenie obejmuje również renowację zabytkowych malowideł i rekonstrukcję detali architektonicznych.",
       mirrors: "Lustra",
       mirrorsText:
-        "Wykraczając poza tradycyjne techniki artystyczne, Alexey projektuje także meble artystyczne, ze szczególnym naciskiem na unikalne lustra ścienne. Każdy obiekt to przemyślane dzieło sztuki. Lustra odzwierciedlają innowacyjny i wszechstronny talent Alexeya, wzbogacając przestrzeń niepowtarzalną estetyką.",
+        "Lustra artystyczne projektowane jako integralna część wnętrza — w porozumieniu z architektem lub projektantem, z uwzględnieniem skali, proporcji i charakteru przestrzeni. Każdy obiekt powstaje na indywidualne zamówienie, od koncepcji po wykonanie.",
       mirrorsCatalogue: "Pełny katalog do wglądu na życzenie.",
       paintings: "Obrazy",
       paintingsText:
-        "Obrazy olejne Alexeya cechuje różnorodność — od sztuki abstrakcyjnej przez impresjonizm po hiperrealizm. Eksperymenty z technikami malarskimi przynoszą wyjątkowe efekty, a każdy obraz łączy walory estetyczne z głębią emocjonalną.",
+        "Malarstwo sztalugowe Alexeya obejmuje prace olejne o zróżnicowanym charakterze — od kompozycji abstrakcyjnych po pejzaże i studia realistyczne. Obrazy mogą stanowić dopełnienie projektu wnętrza lub powstawać jako niezależne realizacje na zamówienie.",
       paintingsCatalogue: "Pełny katalog do wglądu na życzenie.",
     },
     captions: {
@@ -57,45 +55,43 @@ export const translations = {
       city: "50-570 Wrocław, Polska",
     },
     bio: [
-      "Alexey Naumenko to artysta monumentalny i malarz mieszkający we Wrocławiu. Absolwent Białoruskiej Państwowej Akademii Sztuk w Mińsku (2006). Działa jako artysta i projektant multidyscyplinarny. Jego portfolio świadczy o różnorodnych umiejętnościach i wizji artystycznej — unikalne obiekty artystyczne i wyjątkowe elementy designu wnętrz. Tworzy lustra, malarstwo, witraże, oświetlenie, monumentalne freski i meble, łącząc techniki tradycyjne z eksperymentalnymi. Jego prace cechuje głębokie rozumienie przestrzeni i formy oraz wyczucie koloru i faktury, które pozwalają przekształcić każde miejsce w wizualnie oszałamiającą i emocjonalnie poruszającą przestrzeń.",
-      "Sztuka Alexeya to nie tylko pojedyncze obiekty, lecz koncepcja spójnych, estetycznie angażujących środowisk. Współpracuje z projektantami wnętrz i architektami, wnosząc niepowtarzalny, wyrafinowany charakter do projektów — rezydencji prywatnych, przestrzeni publicznych i komercyjnych. Jego realizacje dodają głębi, charakteru i wyraźnego podpisu artystycznego.",
-      "Alexey jest otwarty na współpracę i chętnie realizuje swoją wizję w nowych projektach, przekraczając granice tradycyjnego designu i sztuki. Dla tych, którzy chcą wzbogacić projekty niezwykłą sztuką i innowacją, Alexey Naumenko jest cennym partnerem, gotowym przekształcić koncepcje w namacalną, zapierającą dech w piersiach rzeczywistość.",
+      "Alexey Naumenko — artysta monumentalny z Wrocławia, absolwent Białoruskiej Akademii Sztuk Pięknych w Mińsku (2006, specjalność: malarstwo monumentalne, witraż). Biegły w szerokim zakresie technik monumentalnych: witraż klasyczny i nowoczesny, fresk mokry i suchy, secco, sgraffito, malarstwo iluzjonistyczne. W Polsce zdobył doświadczenie przy renowacji obiektów zabytkowych i rekonstrukcji detali architektonicznych — gzymsów, kolumn, sztukaterii.",
+      "W portfolio projekty zrealizowane dla rezydencji prywatnych, obiektów sakralnych i instytucji, w tym malowidło w Narodowym Banku Republiki Białorusi. Współpracuje z biurami architektonicznymi i projektantami wnętrz na każdym etapie — od koncepcji i wizualizacji po nadzór nad realizacją i montaż.",
+      "Otwarty na nowe projekty. Jeśli poszukujesz artysty, który zintegruje tradycyjne techniki monumentalne z Twoim projektem architektonicznym — zapraszam do kontaktu.",
     ],
     footer: {
       seeMore: "Zobacz więcej najnowszych prac na",
       instagram: "Instagramie",
       collaboration:
-        "Jeśli chcesz nawiązać współpracę lub omówić możliwości partnerstwa, napisz na",
+        "Masz projekt, w którym przydałby się artysta monumentalny? Napisz na",
       goUp: "Do góry",
       copyright: "Alexey Naumenko",
     },
     lang: {
-      pl: "Polski",
-      en: "English",
+      pl: "PL",
+      en: "EN",
     },
   },
   en: {
     hero: {
-      title: "Creating uni",
-      titleQ: "q",
-      titleEnd: "que spaces with art",
+      title: "Enriching spaces with art",
       lead:
-        "Alexey Naumenko is an artist working in traditional techniques to enhance the experience of the interior",
+        "Alexey Naumenko creates stained glass, wall paintings and architectural detail in collaboration with design studios and private investors.",
     },
     section: {
       stainedGlass: "Stained glass",
       stainedGlassText:
-        "Stained glass is Alexey's primary artistic medium, with dozens of completed projects ranging from glass domes and church windows to private residences. In each project, he passionately transforms spaces into visually enchanting environments, consistently leaving his mark of excellence and turning ordinary settings into extraordinary spectacles of light and color.",
+        "Stained glass is Alexey's core specialization — from glass domes and lighting panels to staircase windows and sacred commissions. Every project is developed in close collaboration with the architect: from colour concept and glass selection, through technical design, to fabrication and installation. The portfolio includes dozens of completed projects in Poland and abroad.",
       fresco: "Fresco",
       frescoText:
-        "Fresco painting is another expressive technique close to Alexey's heart, evident in the completion of numerous projects ranging from expansive public murals to intimate private spaces. His commitment to fresco art goes beyond mere decoration; it's a narrative unfolding on walls, infusing spaces with stories and emotions that redefine their essence. Through meticulous details and vibrant compositions, he leaves an indelible mark of artistic mastery, transforming ordinary surfaces into captivating, timeless narratives.",
+        "Wall paintings in fresco, secco and sgraffito techniques — from large-scale compositions in institutional spaces to intimate works in private residences. Alexey selects the technique to match the character of the interior and the requirements of the project, ensuring durability and coherence with the architectural concept. His experience also includes the restoration of historic murals and reconstruction of architectural details.",
       mirrors: "Mirrors",
       mirrorsText:
-        "Beyond traditional artistic techniques, Alexey also excels in designing artistic furniture, with a focus on unique wall mirrors. Each piece is a thoughtfully designed works of art. These mirrors embody Alexey's innovative and diverse talent, enhancing spaces with their unique aesthetic appeal.",
+        "Artistic mirrors designed as an integral part of the interior — in consultation with the architect or designer, taking into account scale, proportion and the character of the space. Each piece is made to individual commission, from concept to completion.",
       mirrorsCatalogue: "Full catalogue available on request",
       paintings: "Paintings",
       paintingsText:
-        "Alexey's oil paintings exemplify a remarkable diversity, spanning abstract art, impressionism, and hyperrealism. His penchant for experimenting with painting techniques yields exceptional results, making each artwork a unique blend of aesthetic appeal and emotional depth.",
+        "Alexey's easel painting encompasses oil works of varied character — from abstract compositions to landscapes and realist studies. Paintings can complement an interior design project or be created as independent commissions.",
       paintingsCatalogue: "Full catalogue available on request",
     },
     captions: {
@@ -125,21 +121,21 @@ export const translations = {
       city: "50-570 Wrocław, Poland",
     },
     bio: [
-      "Alexey Naumenko is a monumental artist and painter based in Wrocław, Poland. Having graduated from the Belarusian State Academy of Arts in Minsk in 2006, he has established himself as a multidisciplinary artist and designer. His portfolio is a testament to his diverse skills and artistic vision, encompassing unique artistic objects and exceptional interior design pieces. Whether crafting mirrors, creating captivating paintings, designing stained glass windows, producing bespoke lighting, executing monumental frescoes, or constructing custom furniture, Alexey utilizes a blend of traditional and experimental techniques and materials. His work is characterized by a deep understanding of space and form, combined with a rich sense of color and texture, which allows him to transform any environment into a visually stunning and emotionally resonant space.",
-      "Alexey's artistry is not just about creating individual pieces; it's about conceptualizing and realizing cohesive, aesthetically engaging environments. His ability to work across different mediums makes him an ideal collaborator for interior designers and architects who seek to bring a unique and sophisticated touch to their projects. Whether it's a private residence, a public space, or a commercial setting, Alexey's creations add depth, character, and a distinct artistic signature.",
-      "He is open to collaborations and eager to bring his unique vision to new projects, embracing challenges and opportunities to push the boundaries of traditional design and art. For those looking to infuse their projects with extraordinary artistry and innovation, Alexey Naumenko is an invaluable partner, ready to transform conceptual visions into tangible, breathtaking realities.",
+      "Alexey Naumenko — monumental artist based in Wrocław, Poland. Graduate of the Belarusian Academy of Fine Arts in Minsk (2006, specialization: monumental painting, stained glass). Proficient in a wide range of monumental techniques: classical and contemporary stained glass, wet and dry fresco, secco, sgraffito, illusionistic painting. In Poland he gained experience in the restoration of historic buildings and reconstruction of architectural details — cornices, columns, stucco.",
+      "His portfolio includes projects completed for private residences, sacred buildings and institutions, including a mural in the National Bank of the Republic of Belarus. He collaborates with architecture firms and interior designers at every stage — from concept and visualization through to supervision and installation.",
+      "Open to new projects. If you are looking for an artist to integrate traditional monumental techniques into your architectural project — get in touch.",
     ],
     footer: {
       seeMore: "See more of recent works on",
       instagram: "Instagram",
       collaboration:
-        "If you wish to explore potential collaborations or discuss partnership opportunities, please drop a message at",
+        "Have a project that could use a monumental artist? Drop a message at",
       goUp: "Go up",
       copyright: "Alexey Naumenko",
     },
     lang: {
-      pl: "Polski",
-      en: "English",
+      pl: "PL",
+      en: "EN",
     },
   },
 } as const;

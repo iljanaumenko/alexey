@@ -109,14 +109,21 @@ export default function MenuTop() {
           </div>
         </div>
 
-        <div className="w-1/2 m:w-1/3 flex justify-end gap-s m:gap-m">
+        <div className="w-1/2 m:w-1/3 flex justify-end items-center gap-s m:gap-m">
+          <div
+            className={`flex items-center gap-s min-w-[4rem] transition-opacity duration-300 ${
+              panelOpen ? "opacity-100" : "opacity-0 pointer-events-none"
+            }`}
+          >
+            <LanguageSwitcher className="uppercase tracking-2 font-semibold" />
+          </div>
           <button
             type="button"
             onClick={() => setPanelOpen(!panelOpen)}
             className="flex gap-xs items-center group open-right-panel border-0 bg-transparent cursor-pointer p-0 text-inherit"
             aria-label={panelOpen ? openedLabel : closedLabel}
           >
-            <div className="uppercase tracking-2 font-semibold">
+            <div className="uppercase tracking-2 font-semibold min-w-[5.5rem] text-right">
               <span className="link open-right-label">
                 {panelOpen ? openedLabel : closedLabel}
               </span>
@@ -137,11 +144,8 @@ export default function MenuTop() {
               </div>
 
               <div className="col-span-6 row-start-1 l:col-span-4 l:col-start-6 m:col-start-4 m:col-span-3 m:row-start-1 flex flex-col">
-                <div className="flex items-center justify-between gap-s">
-                  <div className="uppercase font-semibold tracking-2 border-t pt-2xs">
-                    {t.menu.contact}
-                  </div>
-                  <LanguageSwitcher className="uppercase tracking-2 font-semibold" />
+                <div className="uppercase font-semibold tracking-2 border-t pt-2xs">
+                  {t.menu.contact}
                 </div>
                 <br />
                 <div className="pb-s">

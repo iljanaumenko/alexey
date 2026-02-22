@@ -20,7 +20,7 @@ export default function Home() {
                 className="enter text-n6 m:text-n7 l:text-n8 font-serif mb-m l:mb-l uppercase relative l:mt-2xl pt-l"
                 style={{ textWrap: "balance", fontFeatureSettings: "'liga' off" }}
               >
-                {t.hero.title}<span>{t.hero.titleQ}</span>{t.hero.titleEnd}
+                {t.hero.title}
               </div>
             </div>
             <div className="enter m:col-span-5 l:col-span-4 l:col-start-2">
